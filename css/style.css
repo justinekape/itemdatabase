@@ -1,0 +1,17 @@
+ html {
+   margin: 50px;
+ }
+
+
+
+body {
+  font-family: 'Courier Prime', monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #191970;
+}
+
+.pokemonList {
+  padding: 20px;
+}
