@@ -1,18 +1,32 @@
-let pokemonList = [
-  { name: 'pikachu', height: 0.4, type: 'electric'},
-  {name: 'charizard', height: 1.7, types: ['fire', 'flying']},
-  {name: 'nidoking', height: 1.4, types: ['ground', 'poison']},
-];
+let pokemonRepository = (function () {
+  let pokemonList = [
+    { name: 'pikachu', height: 0.4, type: 'electric'},
+    {name: 'charizard', height: 1.7, types: ['fire', 'flying']},
+    {name: 'nidoking', height: 1.4, types: ['ground', 'poison']},
+  ];
 
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+  function getAll () {
+    return pokemonList;
+  }
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
 
+let pokemonList = pokemonRepository.getAll();
+// assign getAll to pokemonList for forEach loop
 
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write('<br>' + pokemonList[i].name + ' ' + 'height:'+ ' ' +  pokemonList[i].height + ' ');
-// question: would it be easier to add <br> in my js string and then formatting it through CSS?
+function getAll(pokemon) {
+  document.write('<br>' + pokemon.name + ' ' + 'height:' + ' ' + pokemon.height)
 
-if (pokemonList[i].height > 1.5) {
-  document.write(' -i\'m big!');
-} else {
-  document.write('');
+    if (pokemon.height > 1.5) {
+      document.write(' -i\'m big!');
+    } else {
+      document.write('');
+    }
 }
-}
+pokemonList.forEach(getAll);
