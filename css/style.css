@@ -20,3 +20,17 @@ body {
   width: 200px;
   padding: 20px;
 }
+
+.main-button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 0.2s opacity;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+}
