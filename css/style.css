@@ -4,20 +4,20 @@
 
 
 
-html{
+html {
   font-family: 'Courier Prime', monospace;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
 } 
 
-body {
-  /* height: 100%;
-  justify-content: center;
-  display: flex; */
-} 
 
-}
+/* body {
+   height: 100%;
+  justify-content: center;
+  display: flex; 
+} */
+
 
 .pokemonRepository {
   padding: 20px;
@@ -28,7 +28,7 @@ body {
   padding: 20px;
 }
 
- .pokemon-list{
+ .pokemon-list {
    list-style: none;
  }  
  
@@ -44,7 +44,7 @@ body {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3); 
 } 
 
- #modal-container {
+  #modal-container {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -63,7 +63,7 @@ body {
   
   /* used to center the modal */
   display: grid;
-  text-align: center;
+  text-align: center; 
 } 
 
 .modal {
@@ -72,7 +72,7 @@ body {
   box-sizing: border-box;
   background: #fff;
   padding: 15px;
-  width: 100%
+  width: 100%;
   max-width: 700px;
   text-align: left; 
 }
@@ -99,7 +99,6 @@ body {
 }
 
 #modal-container.is-visible {
-  
   display: block;
 }
 
