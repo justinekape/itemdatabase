@@ -43,11 +43,13 @@ let pokemonRepository = (function () {
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      // shows pokemon's first type
+      item.types = details.types[0].type.name;
 
-// to display pokemon type instead of [object]... not sure what I'm missing
+// to display pokemon's types instead of just first type
       const types = [];
-      details.types.forEach((pokemon) => types.push(pokemon.type));
+      details.types.forEach((pokemon) => types.push(pokemon.type.name));
+      item.types = types;
 
 
 
