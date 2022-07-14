@@ -16,8 +16,8 @@ let pokemonRepository = (function () {
     button.classList.add(
       'btn',
       'btn-primary',
-      'group-list-item',
-      'group-list-item-action'
+      'list-group-item',
+      'list-group-item-action'
     );
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#exampleModal');
