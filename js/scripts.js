@@ -90,7 +90,7 @@ function showModal(item) {
   modalTitle.append(nameElement);
   modalBody.append(imageElement);
   modalBody.append(heightElement);
-  modalBOdy.append(typeElement);
+  modalBody.append(typeElement);
 }
 
 
