@@ -73,7 +73,7 @@ let pokemonRepository = (function () {
   }
 
   // pokemon modal in jQuery
-function showModal(item) {
+function showModal(pokemon) {
   let modalTitle = $(".modal-title");
   let modalHeader = $(".modal-header");
   let modalBody = $(".modal-body");
