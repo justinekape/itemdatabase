@@ -21,7 +21,7 @@ let pokemonRepository = (function () {
     );
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#exampleModal');
-    
+
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
 
@@ -91,11 +91,10 @@ function showModal(item) {
   modalBody.append(imageElement);
   modalBody.append(heightElement);
   modalBOdy.append(typeElement);
-
 }
 
 
-  // modal for pokemon
+  // modal for pokemon delete once new modal is working
 // let modalContainer = document.querySelector('#modal-container');
 //
 //   function showModal(pokemon) {
