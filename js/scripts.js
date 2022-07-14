@@ -12,13 +12,22 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add(
+      'btn',
+      'btn-primary',
+      'group-list-item',
+      'group-list-item-action'
+    );
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#exampleModal');
+    
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+
     button.addEventListener('click', function () {
       showDetails(pokemon);
     });
-    button.innerText = pokemon.name;
-    button.classList.add('button-main');
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
   }
 
   function loadList() {
@@ -63,7 +72,7 @@ let pokemonRepository = (function () {
     });
   }
 
-  // pokemon modals in jQuery
+  // pokemon modal in jQuery
 function showModal(item) {
   let modalTitle = $(".modal-title");
   let modalHeader = $(".modal-header");
