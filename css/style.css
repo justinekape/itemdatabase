@@ -1,9 +1,3 @@
-/* html {
-  margin: 50px;
-} */
-
-
-
 html {
  font-family: 'Courier Prime', monospace;
  font-weight: 400;
@@ -11,31 +5,18 @@ html {
  line-height: 1.6;
 } 
 
-
-
-/* body {
-  height: 100%;
- justify-content: center;
- display: flex; 
-} */
-
+ body {
+  padding: 30px;
+} 
 
 .pokemonRepository {
  padding: 20px;
 } 
 
-/* .page-header_item {
- width: 200px;
- padding: 20px;
-} */
-
 .list-group {
   list-style: none;
   margin-top: 150px;
 }
- /* .pokemon-list {
-  list-style: none;
-}  */
 
 .btn-primary {
  background-color: #16b1f4;
@@ -48,6 +29,13 @@ html {
  border-radius: 2px;
  border-bottom: 2px solid rgba(0, 0, 0, 0.3); 
 } 
+
+/* button goes back to 'unclicked' state */
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #16b1f4;
+}
 
  #modal-container {
  position: fixed;
