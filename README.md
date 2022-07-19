@@ -2,7 +2,7 @@
 
 This simple Pokedex app uses an external API to load information for 150 pokemon.
 
-# What I Used:
+# what I used:
 HTML <br>
 JavaScript <br>
 CSS <br>
