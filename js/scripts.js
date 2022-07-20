@@ -2,12 +2,47 @@ let pokemonRepository = (function() {
   let myPokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150";
 
+  // search pokemon
+  const search = document.getElementById("pokeSearch");
+  search.addEventListener("input", searchItem);
+
+  function searchItem() {
+    let searchData = document.getElementById("pokeSearch").value;
+    let ul = document.getElementsByTagName("ul");
+    let pokemonSearch = $(this);
+    pokemonSearch.each(function() {
+      return pokemonSearch.text();
+      if (pokemonSearch.toLowerCase.includes(searchData)) {
+        item.show();
+      } else {
+        item.hide();
+      }
+    });
+  }
+
+  // $(function() {
+  //   $("#listSearch").on("keyup", function() {
+  //     var pokemon = $(this).val.toLowerCase();
+  //     $("#myList li").filter(function() {
+  //       $(this).toggle(
+  //         $(this)
+  //           .text()
+  //           .toLowerCase()
+  //           .indexOf(pokemon) > -1
+  //       );
+  //     });
+  //   });
+  // });
+
   function add(pokemon) {
     myPokemonList.push(pokemon);
   }
   function getAll() {
     return myPokemonList;
   }
+  //function search(pokemonName) {
+  //  return myPokemonList.filter(pokemonName => pokemon.name);
+  // }
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".list-group");
     let listpokemon = document.createElement("li");
@@ -99,6 +134,7 @@ let pokemonRepository = (function() {
   return {
     add: add,
     getAll: getAll,
+    // search: search,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails
