@@ -2,23 +2,41 @@ let pokemonRepository = (function() {
   let myPokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150";
 
-  // search pokemon
+  // search pokemon-- working code
   const search = document.getElementById("pokeSearch");
   search.addEventListener("input", searchItem);
 
   function searchItem() {
     let searchData = document.getElementById("pokeSearch").value;
-    let ul = document.getElementsByTagName("ul");
-    let pokemonSearch = $(this);
-    pokemonSearch.each(function() {
-      return pokemonSearch.text();
-      if (pokemonSearch.toLowerCase.includes(searchData)) {
+    let listItem = $("li");
+
+    listItem.each(function() {
+      let item = $(this);
+      let pokemon = item.text();
+      if (pokemon.includes(searchData)) {
         item.show();
       } else {
         item.hide();
       }
     });
   }
+
+  // const search = document.getElementById("pokeSearch");
+  // search.addEventListener("input", searchItem);
+  //
+  // function searchItem() {
+  //   let searchData = document.getElementById("pokeSearch").value;
+  //   let ul = document.getElementsByTagName("ul");
+  //   let pokemonSearch = $(this);
+  //   pokemonSearch.each(function() {
+  //     return pokemonSearch.text();
+  //     if (pokemonSearch.toLowerCase.includes(searchData)) {
+  //       item.show();
+  //     } else {
+  //       item.hide();
+  //     }
+  //   });
+  // }
 
   // $(function() {
   //   $("#listSearch").on("keyup", function() {
@@ -40,9 +58,6 @@ let pokemonRepository = (function() {
   function getAll() {
     return myPokemonList;
   }
-  //function search(pokemonName) {
-  //  return myPokemonList.filter(pokemonName => pokemon.name);
-  // }
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".list-group");
     let listpokemon = document.createElement("li");
@@ -134,7 +149,6 @@ let pokemonRepository = (function() {
   return {
     add: add,
     getAll: getAll,
-    // search: search,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails
