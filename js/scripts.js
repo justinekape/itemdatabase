@@ -2,12 +2,13 @@ let pokemonRepository = (function() {
   let myPokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150";
 
-  // search pokemon-- working code
+  // search pokemon in search bar
   const search = document.getElementById("pokeSearch");
   search.addEventListener("input", searchItem);
 
   function searchItem() {
     let searchData = document.getElementById("pokeSearch").value;
+    searchData = searchData.toLowerCase();
     let listItem = $("li");
 
     listItem.each(function() {
@@ -20,37 +21,6 @@ let pokemonRepository = (function() {
       }
     });
   }
-
-  // const search = document.getElementById("pokeSearch");
-  // search.addEventListener("input", searchItem);
-  //
-  // function searchItem() {
-  //   let searchData = document.getElementById("pokeSearch").value;
-  //   let ul = document.getElementsByTagName("ul");
-  //   let pokemonSearch = $(this);
-  //   pokemonSearch.each(function() {
-  //     return pokemonSearch.text();
-  //     if (pokemonSearch.toLowerCase.includes(searchData)) {
-  //       item.show();
-  //     } else {
-  //       item.hide();
-  //     }
-  //   });
-  // }
-
-  // $(function() {
-  //   $("#listSearch").on("keyup", function() {
-  //     var pokemon = $(this).val.toLowerCase();
-  //     $("#myList li").filter(function() {
-  //       $(this).toggle(
-  //         $(this)
-  //           .text()
-  //           .toLowerCase()
-  //           .indexOf(pokemon) > -1
-  //       );
-  //     });
-  //   });
-  // });
 
   function add(pokemon) {
     myPokemonList.push(pokemon);
